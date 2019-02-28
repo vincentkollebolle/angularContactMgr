@@ -1,0 +1,18 @@
+<div class="contactlist" >
+  <h1>Liste de mes contacts</h1>
+  <div class="contactShortView" 
+       *ngFor="let contact of contacts" 
+       (click)="ifClickOnContact(contact)"
+       [ngClass]="{'selected':selectedContact===contact}" >
+       
+    <img [ngStyle]="calculateImgsize(contact)" src="{{contact.photo}}" />  
+    <span [ngStyle]="calculateFontsize(contact)">
+      {{contact.forname}} 
+      {{contact.name}}
+    </span>
+    <br style="clear:both;" />  
+  </div>
+</div>
+<div class="detail">
+    <app-detail [contact]="selectedContact"></app-detail>
+</div>

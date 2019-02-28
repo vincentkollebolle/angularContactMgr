@@ -1,0 +1,6 @@
+<div *ngIf="contact" class="contactdetail">
+    <h1>[{{contact.id}}] Detail du contact {{contact.forname}} {{contact.name}}</h1>
+    <label>Prenom:</label><input [(ngModel)] = "contact.forname"/><br />
+    <label>Nom:</label><input [(ngModel)] = "contact.name"/><br />
+    <label>Age:</label><input [(ngModel)] = "contact.age" placeholder="choisir un age de pokemon..."/><br />
+</div>

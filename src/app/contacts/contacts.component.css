@@ -1,0 +1,24 @@
+.contactlist {
+    border:2px solid black;
+    padding:10px;
+    margin-bottom:10px;
+}
+.contactShortView {
+    border: 2px solid black;
+    padding:10px;
+    margin-bottom:10px;
+    font-size:22px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.contactShortView img { 
+    margin-right:10px;
+    float: left;
+}
+.contactShortView:hover {
+    background-color: #efefef;
+    cursor: pointer;
+}
+.contactShortView.selected {
+    background-color: #efefef;
+}

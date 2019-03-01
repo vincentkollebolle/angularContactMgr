@@ -5,14 +5,13 @@
        (click)="ifClickOnContact(contact)"
        [ngClass]="{'selected':selectedContact===contact}" >
        
-    <img [ngStyle]="calculateImgsize(contact)" src="{{contact.photo}}" />  
-    <span [ngStyle]="calculateFontsize(contact)">
-      {{contact.forname}} 
-      {{contact.name}}
-    </span>
+    <a routerLink="/contact/{{contact.id}}">
+      <img [ngStyle]="calculateImgsize(contact)" src="{{contact.photo}}" />  
+      <span [ngStyle]="calculateFontsize(contact)">
+        {{contact.forname}} 
+        {{contact.name}}
+      </span>
+    </a>
     <br style="clear:both;" />  
   </div>
-</div>
-<div class="detail">
-    <app-detail [contact]="selectedContact"></app-detail>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CONTACTS } from '../mock-contacts';
 import { Contact } from '../contact';
+import { ContactService } from '../contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -10,14 +10,17 @@ import { Contact } from '../contact';
 export class ContactsComponent implements OnInit {
 
   /* Paramètres (propriétés de la classe) */
-  contacts = CONTACTS;
   selectedContact: Contact;
-
+  contacts; // je voudrais passer par le service
 
   /* Methodes */
-  constructor() { }
+  constructor(private contactservice: ContactService) {
+  }
 
   ngOnInit() {
+    this.contactservice.getContacts().subscribe(
+      contacts => this.contacts = contacts
+    );
   }
 
   ifClickOnContact(contact: Contact) {

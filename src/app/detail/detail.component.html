@@ -1,6 +1,17 @@
+<nav>
+    <button class="btn btn-primary pull-right" routerLink="/contacts">Retour à la liste des contacts</button>
+    <br style="clear:both"/>
+</nav>
 <div *ngIf="contact" class="contactdetail">
     <h1>[{{contact.id}}] Detail du contact {{contact.forname}} {{contact.name}}</h1>
     <label>Prenom:</label><input [(ngModel)] = "contact.forname"/><br />
     <label>Nom:</label><input [(ngModel)] = "contact.name"/><br />
     <label>Age:</label><input [(ngModel)] = "contact.age" placeholder="choisir un age de pokemon..."/><br />
+    <label>Phone:</label> {{contact.phone}}<br />
+    <label>Website:</label> {{contact.website}}<br />
+    <label>Email:</label> {{contact.email}}<br />
+    <label>Username:</label> {{ contact.username}}<br />
+    <label>Adresse:</label> 
+    <label>Street:</label><input [(ngModel)] ="contact.address.street" />
+    <br />({{contact.address.city}})<br />
 </div>
